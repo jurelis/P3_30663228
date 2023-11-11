@@ -1,0 +1,131 @@
+<!--TABLE VIEW-->
+<table class="table table-hover view">
+<thead>
+    <tr style="background-color: rgb(224, 250, 255);">
+    <th></th>
+    <th scope="col">Código</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Marca</th>
+    <th scope="col">Descripción</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Categoría</th>
+    <th scope="col"><%= products.length %></th>                    
+    </tr>
+</thead>
+<tbody>
+    <% products.forEach(product => { %>
+    <tr class="table-light text-black">
+        <td style="background-color: rgb(224, 250, 255);"><input type="hidden" name="id" value="<%= product.id %>"></td>
+        <td><%= product.code %></td>
+        <td><%= product.name %></td>
+        <td><%= product.model %></td>
+        <td><div><%= product.description %></div></td>
+        <td><%= product.price %></td>
+        <td><%= product.count %></td>
+        <td>
+            <% if(product.category_id == 1) { %>
+                Alimentos
+            <% } else if (product.category_id == 2) { %>
+                Bebidas
+            <% } else if (product.category_id == 3) { %>
+                Accesorios
+            <% } else if (product.category_id == 4) { %>
+                Recursos
+            <% } %>
+        </td>
+        <td style="background-color: rgb(224, 250, 255);"></td>
+    </tr>
+    <% }); %>                                            
+    <tr style="background-color: rgb(224, 250, 255);">
+    <th scope="row" colspan="8">Total de productos</th>
+    <td align="center"><%= products.length %></td>
+    </tr>
+</tbody>
+</table>
+
+<!--ADD-->
+
+<form action="admin/add" method="post" class="add" enctype="multipart/form-data">
+    <div class="container">
+        <div class="p1">
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Nombre del producto</label>
+                <input type="text" class="form-control" placeholder="Escriba el nombre del producto" name="name" required>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Modelo del producto</label>
+                <input type="text" class="form-control" placeholder="Escriba el modelo/marca del producto" name="model" required>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Descripción del producto</label>
+                <input type="text" class="form-control" placeholder="Escriba la descripción del producto" name="description" required>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Precio del producto</label>
+                <input type="number" class="form-control" placeholder="Escriba el precio del producto" name="price" required>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Categoría del producto</label>
+                <select name="category_id">
+                    <option value="1">Alimentos</option>
+                    <option value="2">Bebidas</option>
+                    <option value="3">Accesorios</option>
+                    <option value="4">Recursos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Cantidad del producto</label>
+                <input type="number" class="form-control" placeholder="Escriba la cantidad del producto" name="count" required>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-4" for="inputDefault">Código del producto</label>
+                <input type="number" class="form-control" placeholder="Escriba el código del producto" name="code" required>
+            </div>
+        </div>
+        <div class="p2">
+            <label class="col-form-label mt-4" for="inputDefault">Imagen del producto</label>
+            <input class="btn btn-lg btn-primary" type="file" name="sampleFile" class="manageI" required>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </div>
+</form>
+
+<!--MANAGE IMAGES-->
+<div class="manage-images">
+    <h2>Gestor de imágenes</h2>
+
+    <form ref="uploadForm" action="admin/upload" method="post" id="uploadForm" class="dropzone" enctype="multipart/form-data">
+        <input class="btn btn-lg btn-primary" type="file" name="sampleFile">
+        <input class="btn btn-success" type="submit" value="Subir">
+    </form>
+    <div class="container">
+        <% products.forEach(product => { %>
+            <div class="row">
+            <% images.forEach(image => { %>
+            <div class="col">
+                <div class="p1">
+                    <div class="form-group">
+                        <h1><%= product.name %></h1>
+                        <div class="images">                            
+                                <% if (product.id == image.product_id) { %>
+                                    <img src="<%= image.url %>" width="175" height="175">
+                                <% } %>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <% }); %>
+    </div>
+</form>
+</div>
+
+<!--MANAGE CATEGORIES-->
+<div class="manage-categories">
+    <h2></h2>
+
+</div>
