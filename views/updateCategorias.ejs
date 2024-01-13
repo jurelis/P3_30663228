@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fit_Life-Categorias</title>
+	<link rel="stylesheet" type="text/css" href="/css/update.css">
+	<link rel="icon" type="image/x-icon" href="img/Dental.jpg" />
+</head>
+<body>
+<h1 id="crear" style="font-family: sans-serif;">Actualizar Categoria</h1>
+
+<form action="/updateCategoria/<%=modelo.id%>" method="post">
+
+	<div class='flex-principal'>
+	<label style="color: rgb(235, 120, 216);">Nombre</label>
+	<input type="text" name="nombre" value="<%=modelo.nombre%>">
+
+    </div>
+
+
+     <button class="intel">
+	    <input type="submit" value="Actualizar" id="update">
+        <a href="/categorias" id="botonProductos" style="color: rgb(235, 120, 216);">Volver</a>
+	</button>
+
+</form>
+ 
+
+
+</body>
+</html>
+
+<h2></h2>
