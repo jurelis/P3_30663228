@@ -35,7 +35,7 @@ console.log('un usuario se a desconectado');
 });
 
 //recursos que se van a cargar en el server 
-app.use(express.static(__dirname+'src/static'));
+app.use(express.static(__dirname+'/static'));
 
 //Configuración del Servidor
 app.set('view engine','ejs');//definimos el motor de plantilla con archivos ejs
