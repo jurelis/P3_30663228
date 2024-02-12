@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Fit_Life-Categorias</title>
+  <link rel="stylesheet" type="text/css" href="/css/producto.css">
+  <link rel="stylesheet" type="text/css" href="/css/comprasMediaScreen.css">
+  <link rel="icon" type="image/x-icon" href="/img/limpieza.jpg" />
+  
+</head>
+<body>
+
+<div id='botonera'>
+    
+    <a href="/logout2" class='botonProductos' style="color: rgb(235, 120, 216);">Cerrar</a>
+    <a href="/usuarios" class='botonProductos' style="color: rgb(235, 120, 216);">Users</a>
+    <a href="/compras" class='botonProductos' style="color: rgb(235, 120, 216);">Compras</a>
+    <a href="/productos" class='botonProductos' style="color: rgb(235, 120, 216);">Productos</a>
+    <a href='/categorias' class='botonProductos' style="color: rgb(235, 120, 216);">Categorias</a>
+
+  </div>
+
+  <h1 style="font-family: sans-serif;">Categorias</h1>
+  <div class="table">
+    <table border>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th><a href="/addCategorias"><img src="/img/add.png" id='add'></a></th>
+          </tr>
+          <%for(const categorias of modelo){%>
+            <tr>
+              <td><%=categorias.id%></td>
+              <td><%=categorias.nombre%></td>
+              <td class="icon">
+
+              <a href="/updateCategoria/<%=categorias.id%>"><img src="/img/update.png" width="30"></a>
+              <a href="/eliminarCategoria/<%=categorias.id%>"><img src="/img/delete.png" width="30"></a>
+             </td>
+            </tr>
+           <%}%>
+        </table>
+       
+  </div>
+
+</body>
+</html>
