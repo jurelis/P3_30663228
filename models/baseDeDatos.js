@@ -370,8 +370,8 @@ db.all(sql,[busqueda,busqueda,busqueda,busqueda,busqueda],(err,rows)=>{
       res.render('clientes.ejs',{
         producto:rowsProduct,
          og: {
-      title: 'nova',
-      description: 'Venta de Productos de cocina',
+      title: 'Fitlife',
+      description: 'Productos para perder peso',
       image: 'https://www.amomikitchenaid.com/wp-content/uploads/2018/11/KitchenAid_Batedeira_KEA25AH_Imagem_Ambientada_3-800x533.png',
       // Otros metadatos OGP que desees especificar
       }
@@ -398,8 +398,8 @@ function detalles(req,res){
       res.render('detalles.ejs',{
         imagenes:rowsImagenes,
         og: {
-      title: 'nova',
-      description: 'Venta de Productos de cocina',
+      title: 'Fitlife',
+      description: 'Productos para perder peso',
       image: 'https://www.amomikitchenaid.com/wp-content/uploads/2018/11/KitchenAid_Batedeira_KEA25AH_Imagem_Ambientada_3-800x533.png',
       // Otros metadatos OGP que desees especificar
       }
@@ -424,8 +424,8 @@ const sql = ` DELETE FROM categorias WHERE id = ?`;
 function loginUsers(req,res){
   res.render('loginUsers.ejs',{
     og: {
-      title: 'nova',
-      description: 'Venta de Productos de cocina',
+      title: 'Fitlife',
+      description: 'Productos para perder peso',
       image: 'https://www.amomikitchenaid.com/wp-content/uploads/2018/11/KitchenAid_Batedeira_KEA25AH_Imagem_Ambientada_3-800x533.png',
       // Otros metadatos OGP que desees especificar
       }
@@ -435,8 +435,8 @@ function loginUsers(req,res){
 function registroUsers(req,res){
   res.render('registroUsers.ejs',{
      og: {
-      title: 'nova',
-      description: 'Venta de Productos de cocina',
+      title: 'Fitlife',
+      description: 'Productos para perder peso',
       image: 'https://www.amomikitchenaid.com/wp-content/uploads/2018/11/KitchenAid_Batedeira_KEA25AH_Imagem_Ambientada_3-800x533.png',
       // Otros metadatos OGP que desees especificar
       }
@@ -543,8 +543,8 @@ console.log(data[0]);
         resultado:data[0],
         ip:{ipAddress,cedula},
       og: {
-        title: 'nova',
-        description: 'Venta de Productos de cocina',
+        title: 'Fitlife',
+        description: 'Productos para perder peso',
         image: 'https://www.amomikitchenaid.com/wp-content/uploads/2018/11/KitchenAid_Batedeira_KEA25AH_Imagem_Ambientada_3-800x533.png',
         // Otros metadatos OGP que desees especificar
       }
